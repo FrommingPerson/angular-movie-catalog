@@ -1,0 +1,6 @@
+@reference "tailwindcss";
+
+.movie-card { @apply block; }
+.movie-card__img { @apply aspect-[2/3] w-full overflow-hidden rounded-lg object-cover group-hover:opacity-75 dark:group-hover:opacity-60; }
+.movie-card__info { @apply mt-4 flex items-center justify-between text-base font-medium text-gray-900; }
+.movie-card__subtitle { @apply mt-1 text-sm text-gray-500 italic; }

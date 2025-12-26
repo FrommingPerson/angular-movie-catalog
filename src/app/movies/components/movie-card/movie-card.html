@@ -1,0 +1,17 @@
+<article class="movie-card group">
+  <img
+    [src]="movie.image"
+    [alt]="movie.title"
+    class="movie-card__img"
+    loading="lazy"
+  />
+
+  <div class="movie-card__info">
+    <h3>{{ movie.title }}</h3>
+    <p>
+      <time [attr.datetime]="movie.dateOfPublish">{{ movie.dateOfPublish }}</time>
+    </p>
+  </div>
+
+  <p class="movie-card__subtitle">{{ movie.overview }}</p>
+</article>

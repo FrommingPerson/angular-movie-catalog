@@ -1,0 +1,165 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Avatar: Fire and Ash (2025)",
+      "dateOfPublish": "17/12/2025",
+      "genre": "Science Fiction, Adventure, Fantasy",
+      "duration": "3h 18m",
+      "userScore": 74,
+      "image": "https://media.themoviedb.org/t/p/w440_and_h660_face/g96wHxU7EnoIFwemb2RgohIXrgW.jpg",
+      "overview": "Jake Sully and Neytiri face a new threat on Pandora from the Ash People.",
+      "description": "The world of Pandora will change forever.",
+      "actors": [
+        { "firstName": "Sam", "lastName": "Worthington" },
+        { "firstName": "Zoe", "lastName": "Saldana" },
+        { "firstName": "Sigourney", "lastName": "Weaver" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Dune: Part Two (2024)",
+      "dateOfPublish": "01/03/2024",
+      "genre": "Science Fiction, Adventure",
+      "duration": "2h 46m",
+      "userScore": 82,
+      "image": "https://media.themoviedb.org/t/p/w440_and_h660_face/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg",
+      "overview": "Paul Atreides unites with the Fremen to seek revenge against his enemies.",
+      "description": "Long live the fighters.",
+      "actors": [
+        { "firstName": "Timothée", "lastName": "Chalamet" },
+        { "firstName": "Zendaya", "lastName": "" },
+        { "firstName": "Rebecca", "lastName": "Ferguson" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Oppenheimer (2023)",
+      "dateOfPublish": "21/07/2023",
+      "genre": "Drama, History",
+      "duration": "3h 0m",
+      "userScore": 88,
+      "image": "https://media.themoviedb.org/t/p/w440_and_h660_face/ptpr0kGAckfQkJeJIt8st5dglvd.jpg",
+      "overview": "The story of J. Robert Oppenheimer and the creation of the atomic bomb.",
+      "description": "The world forever changes.",
+      "actors": [
+        { "firstName": "Cillian", "lastName": "Murphy" },
+        { "firstName": "Emily", "lastName": "Blunt" },
+        { "firstName": "Robert", "lastName": "Downey Jr." }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The Batman (2022)",
+      "dateOfPublish": "04/03/2022",
+      "genre": "Action, Crime, Drama",
+      "duration": "2h 56m",
+      "userScore": 79,
+      "image": "https://media.themoviedb.org/t/p/w440_and_h660_face/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+      "overview": "Batman uncovers corruption in Gotham City.",
+      "description": "Unmask the truth.",
+      "actors": [
+        { "firstName": "Robert", "lastName": "Pattinson" },
+        { "firstName": "Zoë", "lastName": "Kravitz" },
+        { "firstName": "Paul", "lastName": "Dano" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Interstellar (2014)",
+      "dateOfPublish": "07/11/2014",
+      "genre": "Science Fiction, Drama",
+      "duration": "2h 49m",
+      "userScore": 84,
+      "image": "https://media.themoviedb.org/t/p/w440_and_h660_face/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+      "overview": "Explorers travel through a wormhole in space to ensure humanity’s survival.",
+      "description": "Mankind was born on Earth. It was never meant to die here.",
+      "actors": [
+        { "firstName": "Matthew", "lastName": "McConaughey" },
+        { "firstName": "Anne", "lastName": "Hathaway" },
+        { "firstName": "Jessica", "lastName": "Chastain" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Inception (2010)",
+      "dateOfPublish": "16/07/2010",
+      "genre": "Science Fiction, Action",
+      "duration": "2h 28m",
+      "userScore": 83,
+      "image": "https://media.themoviedb.org/t/p/w440_and_h660_face/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
+      "overview": "A thief steals corporate secrets using dream-sharing technology.",
+      "description": "Your mind is the scene of the crime.",
+      "actors": [
+        { "firstName": "Leonardo", "lastName": "DiCaprio" },
+        { "firstName": "Joseph", "lastName": "Gordon-Levitt" },
+        { "firstName": "Elliot", "lastName": "Page" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Blade Runner 2049 (2017)",
+      "dateOfPublish": "06/10/2017",
+      "genre": "Science Fiction, Drama",
+      "duration": "2h 44m",
+      "userScore": 81,
+      "image": "https://media.themoviedb.org/t/p/w440_and_h660_face/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
+      "overview": "A young blade runner discovers a secret that could plunge society into chaos.",
+      "description": "The key to the future is finally unearthed.",
+      "actors": [
+        { "firstName": "Ryan", "lastName": "Gosling" },
+        { "firstName": "Harrison", "lastName": "Ford" },
+        { "firstName": "Ana", "lastName": "de Armas" }
+      ]
+    },
+
+    {
+      "id": 8,
+      "title": "Mad Max: Fury Road (2015)",
+      "dateOfPublish": "15/05/2015",
+      "genre": "Action, Adventure",
+      "duration": "2h 0m",
+      "userScore": 80,
+      "image": "https://media.themoviedb.org/t/p/w440_and_h660_face/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg",
+      "overview": "In a post-apocalyptic wasteland, Max teams up with Furiosa.",
+      "description": "What a lovely day.",
+      "actors": [
+        { "firstName": "Tom", "lastName": "Hardy" },
+        { "firstName": "Charlize", "lastName": "Theron" }
+      ]
+    },
+
+    {
+      "id": 9,
+      "title": "The Matrix (1999)",
+      "dateOfPublish": "31/03/1999",
+      "genre": "Science Fiction, Action",
+      "duration": "2h 16m",
+      "userScore": 87,
+      "image": "https://media.themoviedb.org/t/p/w440_and_h660_face/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+      "overview": "A hacker discovers the nature of his reality.",
+      "description": "Welcome to the real world.",
+      "actors": [
+        { "firstName": "Keanu", "lastName": "Reeves" },
+        { "firstName": "Carrie-Anne", "lastName": "Moss" },
+        { "firstName": "Laurence", "lastName": "Fishburne" }
+      ]
+    },
+
+    {
+      "id": 10,
+      "title": "Gladiator (2000)",
+      "dateOfPublish": "05/05/2000",
+      "genre": "Action, Drama",
+      "duration": "2h 35m",
+      "userScore": 82,
+      "image": "https://media.themoviedb.org/t/p/w440_and_h660_face/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg",
+      "overview": "A Roman general seeks revenge after being betrayed.",
+      "description": "What we do in life echoes in eternity.",
+      "actors": [
+        { "firstName": "Russell", "lastName": "Crowe" },
+        { "firstName": "Joaquin", "lastName": "Phoenix" }
+      ]
+    }
+  ]
+}
