@@ -1,0 +1,46 @@
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {MoviesApiService} from '../../movies/data-access/movies-api-service';
+import {catchError, map, of, startWith, switchMap} from 'rxjs';
+import {AsyncPipe} from '@angular/common';
+import {Loader} from '../../common/shared/ui/loader/loader';
+import {Movie} from '../../common/shared/models/movie';
+import {ErrorState} from '../../common/shared/ui/error-state/error-state';
+
+type Vm =
+  | { state: 'loading' }
+  | { state: 'error' }
+  | { state: 'data'; movie: Movie };
+
+@Component({
+  selector: 'app-movie-page',
+  standalone: true,
+  imports: [
+    AsyncPipe,
+    Loader,
+    ErrorState
+  ],
+  templateUrl: './movie-page.html',
+  styleUrl: './movie-page.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class MoviePage {
+  private route = inject(ActivatedRoute);
+  private movieApiService = inject(MoviesApiService);
+
+  movie$ = this.route.paramMap.pipe(
+    map(p => Number(p.get('id'))),
+    switchMap(id => this.movieApiService.getMovie(id))
+  );
+
+  vm$ = this.route.paramMap.pipe(
+    map(params => Number(params.get('id'))),
+    switchMap(id =>
+      this.movieApiService.getMovie(id).pipe(
+        map(movie => ({ state: 'data', movie }) as Vm),
+        catchError(() => of({ state: 'error' } as Vm))
+      )
+    ),
+    startWith({ state: 'loading' } as Vm)
+  );
+}

@@ -1,8 +1,9 @@
-import {Component, ElementRef, EventEmitter, HostListener, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-search-input',
+  standalone: true,
   imports: [
     FormsModule
   ],

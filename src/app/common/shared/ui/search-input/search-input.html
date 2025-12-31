@@ -2,7 +2,7 @@
   <label for="search" class="sr-only">Search</label>
 
   <div class="relative">
-    <div class="search_icon">
+    <div class="search_icon" aria-hidden="true">
       <svg class="h-4 w-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
            fill="none">
         <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
@@ -19,8 +19,8 @@
       [ngModel]="search"
       (ngModelChange)="onInputChange($event)"
       class="search__input"
-      placeholder="Search"
-      required
+      placeholder="Search movies"
+      autocomplete="off"
     />
   </div>
 </form>

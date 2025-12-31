@@ -1,10 +1,12 @@
 <article class="movie-card group">
-  <img
-    [src]="movie.image"
-    [alt]="movie.title"
-    class="movie-card__img"
-    loading="lazy"
-  />
+  <a [routerLink]="['/movies', movie.id]" [attr.aria-label]="'Open ' + movie.title">
+    <img
+      [src]="movie.image"
+      [alt]="movie.title"
+      class="movie-card__img"
+      loading="lazy"
+    />
+  </a>
 
   <div class="movie-card__info">
     <h3>{{ movie.title }}</h3>

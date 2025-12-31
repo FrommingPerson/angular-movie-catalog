@@ -1,0 +1,33 @@
+@reference "tailwindcss";
+
+.not-found {
+  @apply relative isolate min-h-screen;
+}
+
+.not-found__bg {
+  @apply absolute inset-0 -z-10 size-full object-cover object-top;
+}
+
+.not-found__content {
+  @apply mx-auto max-w-7xl px-6 py-32 text-center sm:py-40 lg:px-8;
+}
+
+.not-found__code {
+  @apply text-base font-semibold text-white;
+}
+
+.not-found__title {
+  @apply mt-4 text-5xl font-semibold tracking-tight text-balance text-white;
+}
+
+.not-found__text {
+  @apply mt-6 text-lg font-medium text-pretty text-white/70;
+}
+
+.not-found__actions {
+  @apply mt-10 flex justify-center;
+}
+
+.not-found__link {
+  @apply text-sm/7 font-semibold text-white hover:text-white/90;
+}

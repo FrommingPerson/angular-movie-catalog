@@ -1,7 +1,8 @@
-<section class="bg-white" aria-label="Movies list">
+<section aria-label="Movies list">
   <ul class="movie-list__grid" role="list">
-    @for (movie of movies; track movie.id) {
-      <li>
+    @for (movie of movies; track movie.id; let i = $index) {
+      <li class="movie-list__item"
+          [style.animationDelay.ms]="i * 40">
         <app-movie-card [movie]="movie"/>
       </li>
     }
