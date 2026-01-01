@@ -1,19 +1,39 @@
-<article class="movie-card group">
-  <a [routerLink]="['/movies', movie.id]" [attr.aria-label]="'Open ' + movie.title">
+<article class="movie-card group"
+         (pointerenter)="onEnter()"
+         (pointerleave)="onLeave()"
+>
+  <a class="movie-card__media"
+     [routerLink]="['/movies', movie.id]"
+     [attr.aria-label]="'Open ' + movie.title">
     <img
-      [src]="movie.image"
-      [alt]="movie.title"
       class="movie-card__img"
+      [class.movie-card__imgHidden]="!!trailerSrc"
+      [src]="movie.images.backdrop"
+      [alt]="movie.title"
       loading="lazy"
     />
+    @if (trailerSrc) {
+      <iframe
+        class="movie-card__video"
+        [src]="trailerSrc"
+        title="Trailer"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    }
+    <div class="movie-card__overlay">
+      <h3 class="movie-card__title">{{ movie.title }}</h3>
+    </div>
   </a>
 
-  <div class="movie-card__info">
-    <h3>{{ movie.title }}</h3>
-    <p>
-      <time [attr.datetime]="movie.dateOfPublish">{{ movie.dateOfPublish }}</time>
-    </p>
-  </div>
 
-  <p class="movie-card__subtitle">{{ movie.overview }}</p>
+<!--  <div class="movie-card__info">-->
+<!--    <h3>{{ movie.title }}</h3>-->
+<!--    <p>-->
+<!--      <time [attr.datetime]="movie.dateOfPublish">{{ movie.dateOfPublish }}</time>-->
+<!--    </p>-->
+<!--  </div>-->
+
+<!--  <p class="movie-card__subtitle">{{ movie.overview }}</p>-->
 </article>

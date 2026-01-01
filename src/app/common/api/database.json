@@ -7,9 +7,13 @@
       "genre": "Science Fiction, Adventure, Fantasy",
       "duration": "3h 18m",
       "userScore": 74,
-      "image": "https://upload.wikimedia.org/wikipedia/ru/thumb/b/bf/Аватар_—_Пламя_и_пепел.jpg/250px-Аватар_—_Пламя_и_пепел.jpg",
+      "images": {
+        "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/b/bf/Аватар_—_Пламя_и_пепел.jpg/250px-Аватар_—_Пламя_и_пепел.jpg",
+        "backdrop": "https://i0.wp.com/musesofmedia.ca/wp-content/uploads/2025/12/screenshot-2025-12-16-at-9.05.41-am.png?fit=1200%2C672&ssl=1"
+      },
       "overview": "Jake Sully and Neytiri face a new threat on Pandora from the Ash People.",
       "description": "The world of Pandora will change forever.",
+      "trailerYoutubeId": "nb_fFj_0rq8",
       "actors": [
         { "firstName": "Sam", "lastName": "Worthington" },
         { "firstName": "Zoe", "lastName": "Saldana" },
@@ -23,9 +27,13 @@
       "genre": "Science Fiction, Adventure",
       "duration": "2h 46m",
       "userScore": 82,
-      "image": "https://upload.wikimedia.org/wikipedia/ru/6/61/Дюна_—_Часть_вторая_(постер).jpg",
+      "images": {
+        "poster": "https://upload.wikimedia.org/wikipedia/ru/6/61/Дюна_—_Часть_вторая_(постер).jpg",
+        "backdrop": "https://thescore.s3.us-west-2.amazonaws.com/2025/11/Review_DuneTwo.jpg"
+      },
       "overview": "Paul Atreides unites with the Fremen to seek revenge against his enemies.",
       "description": "Long live the fighters.",
+      "trailerYoutubeId": "poWiludgQCw",
       "actors": [
         { "firstName": "Timothée", "lastName": "Chalamet" },
         { "firstName": "Zendaya", "lastName": "" },
@@ -39,9 +47,13 @@
       "genre": "Drama, History",
       "duration": "3h 0m",
       "userScore": 88,
-      "image": "https://img05.rl0.ru/afisha/e750x-i/daily.afisha.ru/uploads/images/8/2a/82a101001afaa35067e0d506038286a4.jpg",
+      "images": {
+        "poster": "https://img05.rl0.ru/afisha/e750x-i/daily.afisha.ru/uploads/images/8/2a/82a101001afaa35067e0d506038286a4.jpg",
+        "backdrop": "https://i.pinimg.com/736x/b5/2b/b1/b52bb1899806e184d95d39933215bc77.jpg"
+      },
       "overview": "The story of J. Robert Oppenheimer and the creation of the atomic bomb.",
       "description": "The world forever changes.",
+      "trailerYoutubeId": "2CXFpWTxS3M",
       "actors": [
         { "firstName": "Cillian", "lastName": "Murphy" },
         { "firstName": "Emily", "lastName": "Blunt" },
@@ -55,9 +67,13 @@
       "genre": "Action, Crime, Drama",
       "duration": "2h 56m",
       "userScore": 79,
-      "image": "https://upload.wikimedia.org/wikipedia/ru/b/b2/The_Batman_Poster.jpg",
+      "images": {
+        "poster": "https://upload.wikimedia.org/wikipedia/ru/b/b2/The_Batman_Poster.jpg",
+        "backdrop": "https://film-authority.com/wp-content/uploads/2022/02/16459875620726.jpg"
+      },
       "overview": "Batman uncovers corruption in Gotham City.",
       "description": "Unmask the truth.",
+      "trailerYoutubeId": "mqqft2x_Aa4",
       "actors": [
         { "firstName": "Robert", "lastName": "Pattinson" },
         { "firstName": "Zoë", "lastName": "Kravitz" },
@@ -71,9 +87,13 @@
       "genre": "Science Fiction, Drama",
       "duration": "2h 49m",
       "userScore": 84,
-      "image": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+      "images": {
+        "poster": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+        "backdrop": "https://images.bauerhosting.com/legacy/empire-tmdb/films/157336/images/xu9zaAevzQ5nnrsXN6JcahLnG4i.jpg?ar=16%3A9&fit=crop&crop=top&auto=format&w=1440&q=80"
+      },
       "overview": "Explorers travel through a wormhole in space to ensure humanity’s survival.",
       "description": "Mankind was born on Earth. It was never meant to die here.",
+      "trailerYoutubeId": "zSWdZVtXT7E",
       "actors": [
         { "firstName": "Matthew", "lastName": "McConaughey" },
         { "firstName": "Anne", "lastName": "Hathaway" },
@@ -87,9 +107,13 @@
       "genre": "Science Fiction, Action",
       "duration": "2h 28m",
       "userScore": 83,
-      "image": "https://wherefilmed.org/media/cache/a5/1b/a51bd0c2a26700f9e2f212827c40cfd2.jpg",
+      "images": {
+        "poster": "https://wherefilmed.org/media/cache/a5/1b/a51bd0c2a26700f9e2f212827c40cfd2.jpg",
+        "backdrop": "https://motionpictureblog.com/wp-content/uploads/2016/07/inception.jpg?w=1620"
+      },
       "overview": "A thief steals corporate secrets using dream-sharing technology.",
       "description": "Your mind is the scene of the crime.",
+      "trailerYoutubeId": "YoHD9XEInc0",
       "actors": [
         { "firstName": "Leonardo", "lastName": "DiCaprio" },
         { "firstName": "Joseph", "lastName": "Gordon-Levitt" },
@@ -103,16 +127,19 @@
       "genre": "Science Fiction, Drama",
       "duration": "2h 44m",
       "userScore": 81,
-      "image": "https://play-lh.googleusercontent.com/tQsmzV1QDevsohN0xXTt3v5_VqOhOgDoscJZN3Mnb6EuPCc3gisp4k3PLcsxjuOHszzq3w=w240-h480-rw",
+      "images": {
+        "poster": "https://play-lh.googleusercontent.com/tQsmzV1QDevsohN0xXTt3v5_VqOhOgDoscJZN3Mnb6EuPCc3gisp4k3PLcsxjuOHszzq3w=w240-h480-rw",
+        "backdrop": "https://moremovies.co.uk/wp-content/uploads/2021/11/zdhCwSOHkvyRqOwXv0g3TVEOCKU-1024x576.jpg"
+      },
       "overview": "A young blade runner discovers a secret that could plunge society into chaos.",
       "description": "The key to the future is finally unearthed.",
+      "trailerYoutubeId": "gCcx85zbxz4",
       "actors": [
         { "firstName": "Ryan", "lastName": "Gosling" },
         { "firstName": "Harrison", "lastName": "Ford" },
         { "firstName": "Ana", "lastName": "de Armas" }
       ]
     },
-
     {
       "id": 8,
       "title": "Mad Max: Fury Road (2015)",
@@ -120,15 +147,18 @@
       "genre": "Action, Adventure",
       "duration": "2h 0m",
       "userScore": 80,
-      "image": "https://vertex-art.ru/wp-content/uploads/Постеры/01w-1.jpg",
+      "images": {
+        "poster": "https://vertex-art.ru/wp-content/uploads/Постеры/01w-1.jpg",
+        "backdrop": "https://static.okko.tv/images/v4/fecc45b0-6533-4fb5-8e02-87eb657c1ace?scale=1&quality=80"
+      },
       "overview": "In a post-apocalyptic wasteland, Max teams up with Furiosa.",
       "description": "What a lovely day.",
+      "trailerYoutubeId": "hEJnMQG9ev8",
       "actors": [
         { "firstName": "Tom", "lastName": "Hardy" },
         { "firstName": "Charlize", "lastName": "Theron" }
       ]
     },
-
     {
       "id": 9,
       "title": "The Matrix (1999)",
@@ -136,16 +166,19 @@
       "genre": "Science Fiction, Action",
       "duration": "2h 16m",
       "userScore": 87,
-      "image": "https://upload.wikimedia.org/wikipedia/ru/9/9d/Matrix-DVD.jpg",
+      "images": {
+        "poster": "https://upload.wikimedia.org/wikipedia/ru/9/9d/Matrix-DVD.jpg",
+        "backdrop": "https://cojo.ru/wp-content/uploads/2022/12/matritsa-1999-poster-1.webp"
+      },
       "overview": "A hacker discovers the nature of his reality.",
       "description": "Welcome to the real world.",
+      "trailerYoutubeId": "vKQi3bBA1y8",
       "actors": [
         { "firstName": "Keanu", "lastName": "Reeves" },
         { "firstName": "Carrie-Anne", "lastName": "Moss" },
         { "firstName": "Laurence", "lastName": "Fishburne" }
       ]
     },
-
     {
       "id": 10,
       "title": "Gladiator (2000)",
@@ -153,9 +186,13 @@
       "genre": "Action, Drama",
       "duration": "2h 35m",
       "userScore": 82,
-      "image": "https://images.kinomax.ru/550/films/5/5819/p_2d6ab01.jpg",
+      "images": {
+        "poster": "https://images.kinomax.ru/550/films/5/5819/p_2d6ab01.jpg",
+        "backdrop": "https://www.film.ru/sites/default/files/styles/thumb_1024x450/public/trailers_frame/gladiator-movie-wallpapers-9.jpeg"
+      },
       "overview": "A Roman general seeks revenge after being betrayed.",
       "description": "What we do in life echoes in eternity.",
+      "trailerYoutubeId": "TcYIqlBihW4",
       "actors": [
         { "firstName": "Russell", "lastName": "Crowe" },
         { "firstName": "Joaquin", "lastName": "Phoenix" }
