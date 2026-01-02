@@ -1,18 +1,5 @@
 @reference "tailwindcss";
 
-/*@media (hover: hover) and (pointer: fine) {*/
-/*  .group:hover .movie-card__media,*/
-/*  .group:focus-within .movie-card__media {*/
-/*    @apply z-10;*/
-/*    transform: scale(1.08);*/
-/*  }*/
-
-/*  .group:hover .movie-card__overlay,*/
-/*  .group:focus-within .movie-card__overlay {*/
-/*    @apply opacity-100;*/
-/*  }*/
-/*}*/
-
 .movie-card {
   @apply relative;
 }
@@ -58,11 +45,11 @@
 }
 
 .movie-card__info {
-  @apply mt-4 flex items-center justify-between text-base font-medium text-gray-900;
+  @apply sm:hidden mt-4 flex items-center justify-between text-base font-medium text-gray-900;
 }
 
 .movie-card__subtitle {
-  @apply mt-1 text-sm text-gray-500 italic;
+  @apply sm:hidden mt-1 text-sm text-gray-500 italic;
 }
 
 @media (prefers-reduced-motion: reduce) {

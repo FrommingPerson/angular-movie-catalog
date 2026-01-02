@@ -2,28 +2,89 @@
   @switch (vm.state) {
 
     @case ('loading') {
-      <app-loader label="Loading movie…" />
+      <app-loader label="Loading movie…"/>
     }
-
     @case ('error') {
       <app-error-state
         [title]="'Failed to load movie'"
-        [message]="'Something went wrong while fetching the movie. Please try again.'" /> />
+        [message]="'Something went wrong while fetching the movie. Please try again.'"/>
     }
-
     @case ('data') {
-      <main class="movie-page">
-        <h1>{{ vm.movie.title }}</h1>
+      <main class="movie-page" aria-label="Movie details">
+        <header class="movie-page__hero">
+          <img
+            class="movie-page__heroImg"
+            [src]="vm.movie.images.backdrop"
+            [alt]="vm.movie.title"
+            loading="lazy"
+          />
+          <div class="movie-page__heroShade"></div>
+        </header>
 
-        <img
-          [src]="vm.movie.images.poster"
-          [alt]="vm.movie.title"
-          loading="lazy"
-        />
+        <section class="movie-page__content">
+          <div class="movie-page__grid">
+            <aside class="movie-page__left">
+              <img
+                class="movie-page__poster"
+                [src]="vm.movie.images.poster"
+                [alt]="vm.movie.title"
+                loading="lazy"
+              />
+            </aside>
 
-        <p>{{ vm.movie.overview }}</p>
+            <article class="movie-page__right">
+              <div class="movie-page__titleRow">
+                <h1 class="movie-page__title">{{ vm.movie.title }}</h1>
+
+                <app-score-pill [score]="vm.movie.userScore"/>
+              </div>
+
+              <div class="movie-page__meta">
+                <time [attr.datetime]="vm.movie.dateOfPublish">{{ vm.movie.dateOfPublish }}</time>
+                <span class="movie-page__dot">•</span>
+                @for (genre of vm.movie.genre.split(','); track genre) {
+                  <span class="movie-page__pill">{{ genre.trim() }}</span>
+                }
+                <span class="movie-page__dot">•</span>
+                <span>{{ vm.movie.duration }}</span>
+              </div>
+
+              <p class="movie-page__tagline">{{ vm.movie.description }}</p>
+
+              <div class="movie-page__actions">
+                @if (vm.movie.trailerYoutubeId) {
+                  <a
+                    class="movie-page__btnPrimary"
+                    [href]="['https://www.youtube.com/watch?v=' + vm.movie.trailerYoutubeId]"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    ▶ Watch trailer
+                  </a>
+                }
+                <a [routerLink]="['/']" class="movie-page__btnGhost" routerLink="/">Back to catalog</a>
+              </div>
+
+              <section class="movie-page__section">
+                <h2 class="movie-page__sectionTitle">Overview</h2>
+                <p class="movie-page__text">{{ vm.movie.overview }}</p>
+              </section>
+
+              <section class="movie-page__section">
+                <h2 class="movie-page__sectionTitle">Top billed cast</h2>
+
+                <ul class="movie-page__cast" role="list">
+                  @for (a of vm.movie.actors; track a.firstName + a.lastName) {
+                    <li class="movie-page__castItem">
+                      <div class="movie-page__castName">{{ a.firstName }} {{ a.lastName }}</div>
+                    </li>
+                  }
+                </ul>
+              </section>
+            </article>
+          </div>
+        </section>
       </main>
     }
-
   }
 }

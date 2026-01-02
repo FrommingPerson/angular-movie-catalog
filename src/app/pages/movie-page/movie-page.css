@@ -1,0 +1,101 @@
+@reference "tailwindcss";
+
+.movie-page {
+  @apply pb-8 min-h-dvh bg-white;
+}
+
+.movie-page__hero {
+  @apply relative h-[220px] sm:h-[380px] lg:h-[460px] overflow-hidden;
+}
+
+.movie-page__heroImg {
+  @apply absolute inset-0 h-full w-full object-cover object-top sm:object-center;
+}
+
+.movie-page__heroShade {
+  @apply absolute inset-0;
+  @apply bg-gradient-to-b from-black/20 via-black/10 to-white lg:from-black/60 lg:via-black/40 lg:to-white;
+}
+
+.movie-page__content {
+  @apply relative -mt-6 sm:-mt-26 lg:-mt-16;
+}
+
+.movie-page__grid {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  @apply lg:grid lg:grid-cols-12 lg:gap-x-10;
+}
+
+.movie-page__left {
+  @apply lg:col-span-4;
+}
+
+.movie-page__poster {
+  @apply hidden lg:block w-full rounded-2xl shadow-xl ring-1 ring-black/10;
+}
+
+.movie-page__right {
+  @apply mt-8 lg:mt-0 lg:col-span-8;
+}
+
+.movie-page__titleRow {
+  @apply flex items-start justify-between gap-6;
+}
+
+.movie-page__title {
+  @apply text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900;
+}
+
+.movie-page__meta {
+  @apply mt-3 flex flex-wrap items-center gap-x-2 text-sm text-gray-600;
+}
+
+.movie-page__dot {
+  @apply text-gray-300;
+}
+
+.movie-page__pill {
+  @apply rounded-full bg-gray-100 px-2 py-0.5 text-black;
+}
+
+.movie-page__tagline {
+  @apply mt-6 text-base italic text-gray-700;
+}
+
+.movie-page__actions {
+  @apply mt-6 flex flex-wrap gap-3;
+}
+
+.movie-page__btnPrimary {
+  @apply inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2 text-sm font-semibold text-white;
+  @apply hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900/20;
+}
+
+.movie-page__btnGhost {
+  @apply inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-900;
+  @apply hover:bg-gray-50;
+}
+
+.movie-page__section {
+  @apply mt-10;
+}
+
+.movie-page__sectionTitle {
+  @apply text-sm font-semibold text-gray-900;
+}
+
+.movie-page__text {
+  @apply mt-1 text-sm leading-6 text-gray-600;
+}
+
+.movie-page__cast {
+  @apply mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.movie-page__castItem {
+  @apply rounded-xl border border-gray-200 bg-gray-50 px-4 py-3;
+}
+
+.movie-page__castName {
+  @apply text-sm font-semibold text-gray-900;
+}

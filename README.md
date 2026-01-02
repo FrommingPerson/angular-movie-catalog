@@ -205,7 +205,7 @@ BaseEntity.prototype.getId = function () {
 };
 
 const entity = new BaseEntity(1);
-console.log(entity.getId()); // 1
+console.log(entity.getId());
 
 ```
 - В данном примере функция BaseEntity используется как конструктор для создания объектов, а метод getId размещен в ее прототипе. Экземпляр entity получает доступ к этому методу через цепочку прототипов.
