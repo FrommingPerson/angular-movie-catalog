@@ -1,0 +1,98 @@
+@if (vm$ | async; as vm) {
+  @switch (vm.state) {
+
+    @case ('loading') {
+      <app-loader label="Loading movie…"/>
+    }
+
+    @case ('error') {
+      <app-error-state
+        [title]="'Failed to load movie'"
+        [message]="'Something went wrong while fetching the movie. Please try again.'"/>
+    }
+
+    @case ('data') {
+      <main class="pb-8 min-h-dvh bg-white" aria-label="Movie details">
+        <header class="relative h-[220px] sm:h-[380px] lg:h-[460px] overflow-hidden">
+          <img
+            class="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
+            [src]="vm.movie.images.backdrop"
+            [alt]="vm.movie.title"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-white lg:from-black/60 lg:via-black/40 lg:to-white"></div>
+        </header>
+
+        <section class="relative -mt-6 sm:-mt-26 lg:-mt-16">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-12 lg:gap-x-10">
+            <aside class="lg:col-span-4">
+              <img
+                class="hidden lg:block w-full rounded-2xl shadow-xl ring-1 ring-black/10"
+                [src]="vm.movie.images.poster"
+                [alt]="vm.movie.title"
+                loading="lazy"
+              />
+            </aside>
+
+            <article class="mt-8 lg:mt-0 lg:col-span-8">
+              <div class="flex items-center justify-between gap-6">
+                <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">{{ vm.movie.title }}</h1>
+
+                <app-score-pill [score]="vm.movie.userScore"/>
+              </div>
+
+              <div class="mt-3 flex flex-wrap items-center gap-x-2 text-sm text-gray-600">
+                <time [attr.datetime]="vm.movie.dateOfPublish">{{ vm.movie.dateOfPublish }}</time>
+                <span class="movie-page__dot">•</span>
+
+                @for (genre of vm.movie.genre.split(','); track genre) {
+                  <span class="rounded-full bg-gray-200 px-2 py-0.5 text-gray-700">{{ genre.trim() }}</span>
+                }
+
+                <span class="movie-page__dot">•</span>
+                <span>{{ vm.movie.duration }}</span>
+              </div>
+
+              <p class="mt-6 text-base italic text-gray-700">{{ vm.movie.description }}</p>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                @if (vm.movie.trailerYoutubeId) {
+                  <a
+                    class="movie-page__button bg-gray-900 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900/20"
+                    [href]="['https://www.youtube.com/watch?v=' + vm.movie.trailerYoutubeId]"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    ▶ Watch trailer
+                  </a>
+                }
+                <a class="movie-page__button border-gray-200 bg-white text-gray-900 hover:bg-gray-50"
+                   [routerLink]="['/']"
+                >
+                  Back to catalog
+                </a>
+              </div>
+
+              <section class="movie-page__section">
+                <h2 class="movie-page__sectionTitle">Overview</h2>
+                <p class="mt-1 text-sm leading-6 text-gray-600">{{ vm.movie.overview }}</p>
+              </section>
+
+              <section class="movie-page__section">
+                <h2 class="movie-page__sectionTitle">Top billed cast</h2>
+
+                <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" role="list">
+                  @for (a of vm.movie.actors; track a.firstName + a.lastName) {
+                    <li class="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3">
+                      <div class="text-sm font-semibold text-gray-900">{{ a.firstName }} {{ a.lastName }}</div>
+                    </li>
+                  }
+                </ul>
+              </section>
+            </article>
+          </div>
+        </section>
+      </main>
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<span
+  class="inline-flex items-center justify-center rounded-xl px-3 py-2 text-lg font-semibold
+  tabular-nums ring-1 ring-black/5 shadow-sm select-none"
+  [ngClass]="{
+    'bg-emerald-200 text-emerald-900 ring-emerald-300': tone === 'good',
+    'bg-lime-200 text-lime-900 ring-lime-300': tone === 'normal',
+    'bg-amber-200 text-amber-900 ring-amber-300': tone === 'mediocre',
+    'bg-rose-200 text-rose-900 ring-rose-300': tone === 'bad',
+    'bg-gray-200 text-gray-900 ring-gray-300': tone === 'no-input'
+  }"
+  [attr.aria-label]="tone === 'no-input' ? 'Score not available' : ('User score ' + label)"
+  role="status"
+>
+  {{ label }}
+</span>

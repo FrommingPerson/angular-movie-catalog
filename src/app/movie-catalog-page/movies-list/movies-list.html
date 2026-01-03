@@ -1,0 +1,10 @@
+<section aria-label="Movies list">
+  <ul class="mt-8 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-8 lg:gap-x-8" role="list">
+    @for (movie of movies; track movie.id; let i = $index) {
+      <li class="movie-list__item"
+          [style.animationDelay.ms]="i * 40">
+        <app-movie-card [movie]="movie"/>
+      </li>
+    }
+  </ul>
+</section>

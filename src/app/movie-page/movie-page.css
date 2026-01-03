@@ -1,0 +1,28 @@
+@reference "tailwindcss";
+
+.movie-page__dot {
+  @apply text-gray-300;
+}
+
+/*.movie-page__btnPrimary {*/
+/*  @apply inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2 text-sm font-semibold text-white;*/
+/*  @apply hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900/20;*/
+/*}*/
+
+/*.movie-page__btnGhost {*/
+/*  @apply inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-900;*/
+/*  @apply hover:bg-gray-50;*/
+/*}*/
+
+.movie-page__button {
+  @apply inline-flex items-center justify-center rounded-xl border px-4 py-2 text-sm font-semibold;
+}
+
+.movie-page__section {
+  @apply mt-10;
+}
+
+.movie-page__sectionTitle {
+  @apply text-sm font-semibold text-gray-900;
+}
+

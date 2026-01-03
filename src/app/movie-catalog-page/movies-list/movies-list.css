@@ -1,0 +1,19 @@
+@reference "tailwindcss";
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movie-list__item {
+  @apply relative z-0;
+  animation: fadeUp 420ms ease-out both;
+}
+

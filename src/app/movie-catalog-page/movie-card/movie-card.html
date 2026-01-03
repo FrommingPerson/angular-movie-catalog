@@ -1,0 +1,44 @@
+<article class="relative group motion-reduce:transition-none"
+         (pointerenter)="onEnter()"
+         (pointerleave)="onLeave()"
+>
+  <a class="relative block overflow-hidden rounded-lg outline-none transition-transform duration-300 will-change-transform
+           group-hover:z-10 group-focus-within:z-10 group-hover:scale-[1.08] group-focus-within:scale-[1.08]
+           motion-reduce:transition-none"
+     [routerLink]="['/movies', movie.id]"
+     [attr.aria-label]="'Open ' + movie.title">
+    <img
+      class="aspect-[16/9] w-full object-cover transition-opacity duration-200 motion-reduce:transition-none"
+      [class.movie-card__imgHidden]="!!trailerSrc"
+      [src]="movie.images.backdrop"
+      [alt]="movie.title"
+      loading="lazy"
+    />
+    @if (trailerSrc) {
+      <iframe
+        class="absolute inset-0 h-full w-full pointer-events-none"
+        [src]="trailerSrc"
+        title="Trailer"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    }
+    <div class="pointer-events-none absolute inset-0 flex items-end
+             bg-gradient-to-t from-black/85 via-black/10 to-transparent
+             opacity-0 transition-opacity duration-200
+             group-hover:opacity-100 group-focus-within:opacity-100
+             motion-reduce:transition-none">
+      <h3 class="w-full p-3 text-left text-sm text-white font-semibold tracking-wide">{{ movie.title }}</h3>
+    </div>
+  </a>
+
+
+  <div class="sm:hidden mt-4 flex items-center justify-between text-base font-medium text-gray-900">
+    <h3>{{ movie.title }}</h3>
+    <p>
+      <time [attr.datetime]="movie.dateOfPublish">{{ movie.dateOfPublish }}</time>
+    </p>
+  </div>
+
+  <p class="sm:hidden mt-1 text-sm text-gray-500 italic">{{ movie.overview }}</p>
+</article>

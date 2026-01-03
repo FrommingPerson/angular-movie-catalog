@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import {NotFoundPage} from './pages/not-found-page/not-found-page';
-import {MovieCatalogPage} from './pages/movie-catalog-page/movie-catalog-page';
-import {MoviePage} from './pages/movie-page/movie-page';
+import {NotFoundPage} from './not-found-page/not-found-page';
+import {MovieCatalogPage} from './movie-catalog-page/movie-catalog-page';
+import {MoviePage} from './movie-page/movie-page';
 
 export const routes: Routes = [
   {
