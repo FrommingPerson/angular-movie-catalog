@@ -13,7 +13,11 @@ export const routes: Routes = [
     component: MoviePage
   },
   {
-    path: '**',
+    path: 'not-found',
     component: NotFoundPage
   },
+  {
+    path: '**',
+    redirectTo: 'not-found'
+  }
 ];

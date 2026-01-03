@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, inject} from '@angular/core';
 import {
   catchError,
   debounceTime,
@@ -8,7 +8,7 @@ import {
   shareReplay,
   startWith,
   Subject,
-  switchMap
+  switchMap, tap
 } from 'rxjs';
 import {Movie} from '../common/models/movie';
 import {MoviesApiService} from '../common/services/api/movies-api-service';
@@ -17,11 +17,6 @@ import {MoviesList} from './movies-list/movies-list';
 import {SearchInput} from '../common/components/search-input/search-input';
 import {Loader} from '../common/components/loader/loader';
 import {ErrorState} from '../common/components/error-state/error-state';
-
-type Vm =
-  | { state: 'loading' }
-  | { state: 'error'; message: string }
-  | { state: 'data'; movies: Movie[] };
 
 @Component({
   selector: 'app-movie-catalog-page',
@@ -38,23 +33,25 @@ type Vm =
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieCatalogPage {
-  private movieService = inject(MoviesApiService);
-
   private search$ = new Subject<string>();
+  isFetching = true;
 
-  vm$: Observable<Vm> = this.search$.pipe(
+  constructor(private readonly movieService: MoviesApiService, private readonly ref: ChangeDetectorRef) {}
+
+
+  movies$: Observable<Movie[]> = this.search$.pipe(
     startWith(''),
-    debounceTime(300),
+    debounceTime(500),
+    tap(() => {
+      this.isFetching = true;
+    }),
     distinctUntilChanged(),
     switchMap(search =>
       this.movieService.getMovies(search).pipe(
-        map(movies => ({ state: 'data', movies }) as Vm),
-        catchError(() =>
-          of({ state: 'error', message: 'Failed to load movies' } as Vm)
+        catchError(() => of([])),
         )
-      )
-    ),
-    startWith({ state: 'loading' } as Vm),
+      ),
+    tap(() => this.isFetching = false),
     shareReplay({ bufferSize: 1, refCount: true })
   );
 

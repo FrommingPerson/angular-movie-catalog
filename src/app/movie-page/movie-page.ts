@@ -1,17 +1,11 @@
-import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
-import {ActivatedRoute, RouterLink} from '@angular/router';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {MoviesApiService} from '../common/services/api/movies-api-service';
-import {catchError, map, of, startWith, switchMap} from 'rxjs';
+import {catchError, finalize, map, Observable, of, shareReplay, switchMap, tap} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
 import {Loader} from '../common/components/loader/loader';
 import {Movie} from '../common/models/movie';
-import {ErrorState} from '../common/components/error-state/error-state';
 import {ScorePill} from '../common/components/score-pill/score-pill';
-
-type Vm =
-  | { state: 'loading' }
-  | { state: 'error' }
-  | { state: 'data'; movie: Movie };
 
 @Component({
   selector: 'app-movie-page',
@@ -19,7 +13,6 @@ type Vm =
   imports: [
     AsyncPipe,
     Loader,
-    ErrorState,
     RouterLink,
     ScorePill
   ],
@@ -28,17 +21,28 @@ type Vm =
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MoviePage {
-  private route = inject(ActivatedRoute);
-  private movieApiService = inject(MoviesApiService);
+  isFetching = true;
 
-  vm$ = this.route.paramMap.pipe(
-    map(params => Number(params.get('id'))),
-    switchMap(id =>
-      this.movieApiService.getMovie(id).pipe(
-        map(movie => ({ state: 'data', movie }) as Vm),
-        catchError(() => of({ state: 'error' } as Vm))
-      )
-    ),
-    startWith({ state: 'loading' } as Vm)
-  );
+  movie$: Observable<Movie | null>;
+
+  constructor(private readonly movieApiService: MoviesApiService, private readonly route: ActivatedRoute, private readonly router: Router) {
+    this.movie$ = this.route.paramMap.pipe(
+      map(params => Number(params.get('id'))),
+      tap(() => {
+        this.isFetching = true;
+      }),
+      switchMap(id =>
+        this.movieApiService.getMovie(id).pipe(
+          catchError(() => {
+            this.router.navigate(['not-found']);
+            return of(null);
+          }),
+          finalize(() => {
+            this.isFetching = false;
+          })
+        )
+      ),
+      shareReplay({ bufferSize: 1, refCount: true })
+    );
+  }
 }

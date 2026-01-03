@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently -k -n \"NG,API\" -c \"blue,green\" \"ng serve\"  \"json-server --watch src/app/common/services/mock-api/database.json --port 3000 --delay 210\"",
+    "start": "concurrently -k -n \"NG,API\" -c \"blue,green\" \"ng serve\"  \"json-server --watch src/app/common/services/mock-api/database.json --port 3000 --delay 300\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "serve": "ng serve",
