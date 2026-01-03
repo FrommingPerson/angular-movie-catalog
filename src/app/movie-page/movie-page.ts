@@ -3,18 +3,18 @@ import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {MoviesApiService} from '../common/services/api/movies-api-service';
 import {catchError, finalize, map, Observable, of, shareReplay, switchMap, tap} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
-import {Loader} from '../common/components/loader/loader';
 import {Movie} from '../common/models/movie';
 import {ScorePill} from '../common/components/score-pill/score-pill';
+import {MoviePageSkeleton} from './movie-page-skeleton/movie-page-skeleton';
 
 @Component({
   selector: 'app-movie-page',
   standalone: true,
   imports: [
     AsyncPipe,
-    Loader,
     RouterLink,
-    ScorePill
+    ScorePill,
+    MoviePageSkeleton
   ],
   templateUrl: './movie-page.html',
   styleUrl: './movie-page.css',

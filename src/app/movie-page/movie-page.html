@@ -1,10 +1,10 @@
 @if (isFetching) {
-  <app-loader label="Loading movie…"/>
+  <app-movie-page-skeleton/>
 }
 
 @if (movie$ | async; as movie) {
   <main class="pb-8 min-h-dvh bg-white" aria-label="Movie details">
-    <header class="relative h-[220px] sm:h-[380px] lg:h-[460px] overflow-hidden">
+    <header class="relative h-[220px] sm:h-[380px] lg:h-[480px] overflow-hidden">
       <img
         class="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
         [src]="movie.images.backdrop"

@@ -1,8 +1,8 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {
   catchError,
   debounceTime,
-  distinctUntilChanged, map,
+  distinctUntilChanged,
   Observable,
   of,
   shareReplay,
@@ -16,7 +16,7 @@ import {AsyncPipe} from '@angular/common';
 import {MoviesList} from './movies-list/movies-list';
 import {SearchInput} from '../common/components/search-input/search-input';
 import {Loader} from '../common/components/loader/loader';
-import {ErrorState} from '../common/components/error-state/error-state';
+import {NoResultsState} from '../common/components/no-results-state/no-results-state';
 
 @Component({
   selector: 'app-movie-catalog-page',
@@ -26,7 +26,7 @@ import {ErrorState} from '../common/components/error-state/error-state';
     MoviesList,
     SearchInput,
     Loader,
-    ErrorState
+    NoResultsState
   ],
   templateUrl: './movie-catalog-page.html',
   styleUrl: './movie-catalog-page.css',
@@ -36,7 +36,7 @@ export class MovieCatalogPage {
   private search$ = new Subject<string>();
   isFetching = true;
 
-  constructor(private readonly movieService: MoviesApiService, private readonly ref: ChangeDetectorRef) {}
+  constructor(private readonly movieService: MoviesApiService) {}
 
 
   movies$: Observable<Movie[]> = this.search$.pipe(

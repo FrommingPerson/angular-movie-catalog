@@ -12,9 +12,8 @@
 
       @if (movies$ | async; as movies) {
         @if (!isFetching && movies.length === 0) {
-          <app-error-state
-            [title]="'Movies not found'"
-            [message]="'Try another search query.'" />
+          <app-no-results-state [title]="'Movies not found'"
+                                [message]="'Try another search query.'" />
         }
             <app-movies-list
               [movies]="movies" />
